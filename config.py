@@ -3,10 +3,8 @@ import os
 
 class Config:
     SECRET_KEY = os.getenv('SECRET_KEY') or 'some string'
-
-    @staticmethod
-    def init_app(app):
-        pass
+    APP_NAME = 'bookService'
+    MONGODB_SETTINGS = {'DB': 'testing'}
 
 
 class DevelopmentConfig(Config):

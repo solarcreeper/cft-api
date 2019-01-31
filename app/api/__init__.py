@@ -1,10 +1,19 @@
+import os
+from importlib import import_module
+
 from flask import Blueprint
-from flask_restful import Api, Resource
+from flask_restplus import Api
+from setuptools import find_packages
 
-from app.api.views import HelloWorld
+import config
 
-api_bp = Blueprint('api', __name__)  # 这里的main只是为蓝本取得一个名字，并不一定要和main这个主程序包一致
+api_bp = Blueprint(name='api', import_name=__name__, url_prefix='/%s/api/v1' % config.Config.APP_NAME)
+api = Api(api_bp, version='1.0', title='test', description='test')
 
-api = Api(api_bp)
 
-api.add_resource(HelloWorld, '/1')
+def init_module(app):
+    app.register_blueprint(api_bp)
+    for module_name in find_packages(os.path.dirname(__file__)):
+        module = import_module(name='.%s' % module_name, package=__name__)
+        if hasattr(module, 'init_module'):
+            module.init_module(api)

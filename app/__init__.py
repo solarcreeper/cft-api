@@ -1,19 +1,21 @@
+import os
+import pkgutil
+from importlib import import_module
 from flask import Flask
-from flask_restful import Api, Resource
-
 from config import config
+
+
+def __init_module(app):
+    for importer, module_name, ispkg in pkgutil.iter_modules([os.path.dirname(__file__)]):
+        if ispkg:
+            mod = import_module(name='.%s' % module_name, package=__name__)
+            if hasattr(mod, 'init_module'):
+                mod.init_module(app)
 
 
 def create_app(config_mode):
     app = Flask(__name__)
+    # from_object 只有大写名称的值才会被存储到配置对象中，确保在配置键中使用大写字母
     app.config.from_object(config[config_mode])
-    config[config_mode].init_app(app)
-
-    '''要在这里添加一些路由和自定义错误处理的信息，按照下文的说明，可以注册一个蓝本对象'''
-    from .main import main as main_blueprint
-    app.register_blueprint(main_blueprint)
-
-    from .api import api_bp as api_blueprint
-    app.register_blueprint(api_blueprint, url_prefix='/api')
+    __init_module(app)
     return app
-
