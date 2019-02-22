@@ -9,6 +9,7 @@ env_api = Namespace('env_info')
 env_model = env_api.model('env_model', {
     'id': fields.String,
     'env_name': fields.String,
+    'env_usage': fields.String,
     'user': fields.String,
     'check_flag': fields.String,
     'date': fields.String
@@ -42,4 +43,4 @@ class EvnInfo(Resource):
     @env_api.marshal_list_with(env_model)
     def put(self):
         args = params.env_post.parse_args()
-        return EnvConnector.add(**args)
+        return EnvConnector.update(**args)

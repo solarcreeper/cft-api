@@ -10,8 +10,9 @@ class EnvConnector(object):
         return env_info
 
     @classmethod
-    def update(cls, env_info, **kwargs):
+    def update(cls, **kwargs):
         try:
+            env_info = EnvModel.objects(env_name=kwargs.get('env_name')).first()
             env_info.update(**kwargs)
             env_info = env_info.reload()
             return env_info

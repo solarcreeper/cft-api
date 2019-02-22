@@ -8,7 +8,7 @@ from setuptools import find_packages
 import config
 
 api_bp = Blueprint(name='api', import_name=__name__, url_prefix='/%s/api/v1' % config.Config.APP_NAME)
-api = Api(api_bp, version='1.0', title='SYSTEM MONITOR API', description='this is a demo for storage system system_info')
+api = Api(api_bp, version='1.0', title='SYSTEM MONITOR API', description='this is a demo for storage system sys_info')
 
 
 def init_module(app):

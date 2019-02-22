@@ -1,8 +1,9 @@
-from app.data_model import db
+import mongoengine
 
 
-class EnvModel(db.Document):
-    env_name = db.StringField(required=True)
-    user = db.StringField(required=False)
-    check_flag = db.StringField(required=True)
-    date = db.StringField(required=True)
+class EnvModel(mongoengine.Document):
+    env_name = mongoengine.StringField(required=True)
+    env_usage = mongoengine.StringField(required=True)
+    user = mongoengine.StringField(required=False)
+    check_flag = mongoengine.StringField(required=True)
+    date = mongoengine.StringField(required=True)
