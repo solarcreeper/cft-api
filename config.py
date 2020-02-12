@@ -1,10 +1,12 @@
 import os
+from log import Log
+logger = Log()
 
 
 class Config:
     SECRET_KEY = os.getenv('SECRET_KEY') or 'some string'
-    APP_NAME = 'monitor'
-    MONGODB_SETTINGS = {'DB': 'testing'}
+    APP_NAME = 'cft'
+    MONGODB_SETTINGS = {'DB': 'cft'}
 
 
 class DevelopmentConfig(Config):
