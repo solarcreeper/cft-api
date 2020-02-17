@@ -3,3 +3,4 @@ flask_restplus
 pymongo
 flask_mongoengine
 bson
+requests
