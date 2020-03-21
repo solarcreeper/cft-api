@@ -1,0 +1,16 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/.gitignore
+.idea/cft-api.iml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+__pycache__/
+app/__pycache__/
+app/api/__pycache__/
+app/api/io/__pycache__/
+app/api/user/__pycache__/
+app/connector/__pycache__/
+app/data_model/__pycache__/
+venv/
+vue/node_modules/

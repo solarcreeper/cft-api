@@ -1,0 +1,26 @@
+html,
+body,
+#app {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.el-breadcrumb {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.el-card {
+    box-shadow: 0 1px 1px rgb(0, 0, 0, 0.15) !important;
+    height: 97%;
+}
+
+.content-wrapper {
+    height: 100%;
+}
+
+.el-table {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
