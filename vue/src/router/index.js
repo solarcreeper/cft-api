@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../components/Login.vue'
-import Home from '../components/Home.vue'
-import Welcome from '../components/Welcome.vue'
-import IO from '../components/IO.vue'
-import Result from '../components/Result.vue'
-import Task from '../components/Task.vue'
-import Config from '../components/Config.vue'
-import Report from '../components/Report.vue'
+import Login from '../views/Login.vue'
+import Home from '../views/Home.vue'
+import Welcome from '../views/Welcome.vue'
+import Io from '../views/Io.vue'
+import Scripts from '../views/Scripts.vue'
+import StrategyEngine from '../views/StrategyEngine.vue'
+import HisIo from '../views/HisIo.vue'
+import HisScripts from '../views/HisScripts.vue'
+import Report from '../views/Report.vue'
 
 Vue.use(VueRouter)
 
@@ -20,10 +21,11 @@ const routes = [
     redirect: '/welcome',
     children: [
       { path: '/welcome', component: Welcome },
-      { path: '/io', component: IO },
-      { path: '/result', component: Result },
-      { path: '/task', component: Task },
-      { path: '/config', component: Config },
+      { path: '/io', component: Io },
+      { path: '/scripts', component: Scripts },
+      { path: '/strategy', component: StrategyEngine },
+      { path: '/his_io', component: HisIo },
+      { path: '/his_scripts', component: HisScripts },
       { path: '/report', component: Report }
     ]
   }

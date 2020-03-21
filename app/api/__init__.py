@@ -5,9 +5,9 @@ from flask import Blueprint
 from flask_restplus import Api
 from setuptools import find_packages
 
-import config
+from config import config
 
-api_bp = Blueprint(name='api', import_name=__name__, url_prefix='/%s/api/v1' % config.Config.APP_NAME)
+api_bp = Blueprint(name='api', import_name=__name__, url_prefix='/%s/api/v1' % config.APP_NAME)
 api = Api(api_bp, version='1.0', title='CFT API', description='')
 
 
