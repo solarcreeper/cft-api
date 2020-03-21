@@ -58,5 +58,13 @@ def mock_script_data(count):
         print(result.status_code)
 
 
+def mock_strategy_data(count):
+    for i in range(count):
+        result = requests.post(url=URL_PREFIX + 'strategy',
+                               data={'strategy_name': 'TEST%d' % i,
+                                     'owner': random.choice(['TETS1', 'TETS2', 'TETS3'])})
+        print(result.status_code)
+
+
 if __name__ == '__main__':
-    mock_his_script_data(100)
+    mock_strategy_data(100)
