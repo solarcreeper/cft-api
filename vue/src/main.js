@@ -7,7 +7,6 @@ import axios from 'axios'
 
 axios.defaults.baseURL = 'http://localhost:8088/cft/api/v1/'
 axios.interceptors.request.use(config => {
-  console.log(config)
   return config
 })
 Vue.prototype.$http = axios
