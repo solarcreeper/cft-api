@@ -4,7 +4,7 @@ from bson import ObjectId
 
 from app.connector.base import to_dict
 from app.data_model.strategy_model import StrategyModel
-from config import logger
+from app import logger
 
 
 class StrategyConnector(object):

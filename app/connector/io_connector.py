@@ -4,7 +4,7 @@ from bson import ObjectId
 
 from app.connector.base import to_dict
 from app.data_model.io_model import IoModel, HisIoModel
-from config import logger
+from app import logger
 
 
 class IoConnector(object):

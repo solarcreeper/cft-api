@@ -1,5 +1,8 @@
-from config.config import Config
-from log import Log
+def load_logger():
+    from log import Log
+    return Log
 
-logger = Log()
-config = Config()
+
+def load_config():
+    from config.config import Config
+    return Config

@@ -1,7 +1,7 @@
 from bson import ObjectId
 
 from app.data_model.user_model import UserModel
-from config import logger
+from app import logger
 
 
 class UserConnector(object):
